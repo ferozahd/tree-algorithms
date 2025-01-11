@@ -1,20 +1,6 @@
 package self.treetute.traversal;
 
-class TreeNode {
-    int val;
-    TreeNode left, right;
-
-    TreeNode(int val) {
-        this.val = val;
-        this.left = null;
-        this.right = null;
-    }
-
-    @Override
-    public String toString(){
-        return Integer.toString(val);
-    }
-}
+import self.treetute.models.TreeNode;
 
 public class MirrorTraversalTree {
 
@@ -23,26 +9,26 @@ public class MirrorTraversalTree {
         StringBuilder sb =new StringBuilder();
         while (current != null) {
             // If left child is null, visit this node and move to the right
-            if (current.left == null) {
-                sb.append(current.val + ",");
-                current = current.right;
+            if (current.getLeft() == null) {
+                sb.append(current.getValue() + ",");
+                current = current.getRight();
             } else {
                 // Find the in-order predecessor of current
-                TreeNode predecessor = current.left;
-                while (predecessor.right != null && predecessor.right != current) {
-                    predecessor = predecessor.right;
+                TreeNode predecessor = current.getLeft();
+                while (predecessor.getRight() != null && predecessor.getRight() != current) {
+                    predecessor = predecessor.getRight();
                 }
 
                 // Make the temporary link or break it
-                if (predecessor.right == null) {
+                if (predecessor.getRight() == null) {
                     // Create the temporary link
-                    predecessor.right = current;
-                    current = current.left;
+                    predecessor.setRight( current);
+                    current = current.getLeft();
                 } else {
                     // Temporary link already exists; remove it and visit current
-                    predecessor.right = null;
-                    sb.append(current.val + ",");
-                    current = current.right;
+                    predecessor.setRight(null);
+                    sb.append(current.getValue() + ",");
+                    current = current.getRight();
                 }
             }
         }

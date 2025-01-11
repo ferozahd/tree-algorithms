@@ -28,12 +28,12 @@ public class TreeNode {
         return right;
     }
 
-    public void setLeft(int val){
-        this.left=new TreeNode(val);
+    public void setLeft(TreeNode val){
+        this.left=val;
     }
 
-    public void setRight(int val){
-        this.right=new TreeNode(val);
+    public void setRight(TreeNode val){
+        this.right=val;
     }
 
 }

@@ -3,16 +3,17 @@ package test.tree.depthfind;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import self.treetute.depthfind.BinaryTreeNodeCounting;
 import self.treetute.depthfind.TreeDepthFinding;
 import self.treetute.models.TreeNode;
 
-public class BinaryTreeDepthFindingTest {
+public class BinaryTreeNodeCountingTest {
 
-    private TreeDepthFinding treeDepthFinding;
+    private BinaryTreeNodeCounting binaryTreeNodeCounting;
     public TreeNode root ;
     @BeforeEach
     public void injectBeforeEach(){
-        this.treeDepthFinding=new TreeDepthFinding();
+        this.binaryTreeNodeCounting=new BinaryTreeNodeCounting();
         this.root = new TreeNode(1,
 
                 new TreeNode(2,
@@ -37,17 +38,13 @@ public class BinaryTreeDepthFindingTest {
 
     @Test
     public void findTreeDepthByUsingRecursive(){
-        Assertions.assertEquals(4,treeDepthFinding.treeDepthFindByUsingRecursive(root));
+        Assertions.assertEquals(11,binaryTreeNodeCounting.treeDepthFindByUsingRecursive(root));
     }
 
 
     @Test
     public void findTreeDepthByUsingNonRecursive(){
-        Assertions.assertEquals(4,treeDepthFinding.treeDepthFindByUsingNonRecursive(root));
-    }
-    @Test
-    public void findTreeDepthByUsingNonRecursive2(){
-        Assertions.assertEquals(4,treeDepthFinding.treeDepthFindByUsingNonRecursive2(root));
+        Assertions.assertEquals(11,binaryTreeNodeCounting.treeDepthFindByUsingNonRecursive(root));
     }
 
 
