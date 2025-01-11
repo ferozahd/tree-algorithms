@@ -2,8 +2,8 @@ package self.treetute.models;
 
 public class TreeNode {
     private final int value;
-    private final TreeNode left;
-    private final TreeNode right;
+    private TreeNode left;
+    private TreeNode right;
 
     public TreeNode(int value,TreeNode left, TreeNode right){
         this.value=value;
@@ -26,6 +26,14 @@ public class TreeNode {
 
     public TreeNode getRight() {
         return right;
+    }
+
+    public void setLeft(int val){
+        this.left=new TreeNode(val);
+    }
+
+    public void setRight(int val){
+        this.right=new TreeNode(val);
     }
 
 }
