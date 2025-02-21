@@ -36,4 +36,8 @@ public class TreeNode {
         this.right=val;
     }
 
+    @Override
+    public String toString(){
+        return String.format("{\n\t\"value\":%d, \n\t\"left\":%s, \n\t\"right\":%s\n}",value,left,right);
+    }
 }
